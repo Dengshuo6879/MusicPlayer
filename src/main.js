@@ -1,8 +1,8 @@
-import 'babel-polyfill'
+import 'babel-polyfill'         //对ES6的API做转义
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import fastclick from 'fastclick'
+import fastclick from 'fastclick'        //解决移动端点击300ms延迟的问题
 import VueLazyLoad from 'vue-lazyload'
 import store from './store'
 

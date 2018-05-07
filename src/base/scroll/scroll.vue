@@ -9,7 +9,7 @@
 
   export default{
     props: {
-      probeType: {
+      probeType: {         //指定快速拖动时监听到
         type: Number,
         default: 1
       },
@@ -41,7 +41,7 @@
     mounted() {
       setTimeout(() => {
         this._initScroll()
-      }, 200)
+      }, 20)
     },
     methods: {
       _initScroll() {

@@ -60,6 +60,7 @@
             }))
           }
           const key = item.Findex
+          //判断map中有没有这个key，没有则添加
           if (!map[key]) {
             map[key] = {
               title: key,
@@ -77,12 +78,13 @@
         let ret = []
         for (let key in map) {
           let val = map[key]
-          if (val.title.match(/[a-zA-z]/)) {
+          if (val.title.match(/[a-zA-Z]/)) {
             ret.push(val)
           } else if (val.title === HOT_NAME) {
             hot.push(val)
           }
         }
+        //按字母顺序排列
         ret.sort((a, b) => {
           return a.title.charCodeAt(0) - b.title.charCodeAt(0)
         })

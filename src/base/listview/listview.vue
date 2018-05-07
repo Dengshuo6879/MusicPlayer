@@ -60,17 +60,19 @@
       selectItem(item) {
         this.$emit('select', item)
       },
+      //点击事件
       onShortcutTouchStart(e) {
         let anchorIndex = getData(e.target, 'index')
-        let firstTouch = e.touches[0]
+        let firstTouch = e.touches[0]  //在touch开始时记录位置
         this.touch.y1 = firstTouch.pageY
         this.touch.anchorIndex = anchorIndex
         this._scrollTo(anchorIndex)
       },
+      //拖动事件
       onShortcutTouchMove(e) {
         let firstTouch = e.touches[0]
         this.touch.y2 = firstTouch.pageY
-        let delta = (this.touch.y2 - this.touch.y1) / ANCHOR_HEIGHT | 0
+        let delta = (this.touch.y2 - this.touch.y1) / ANCHOR_HEIGHT | 0   //向下取整，等同于Math.Floor
         let anchorIndex = parseInt(this.touch.anchorIndex) + delta
         this._scrollTo(anchorIndex)
       },
