@@ -38,7 +38,7 @@
         default: 20
       }
     },
-    mounted() {
+    mounted() {      //确保dom已经渲染
       setTimeout(() => {
         this._initScroll()
       }, 20)

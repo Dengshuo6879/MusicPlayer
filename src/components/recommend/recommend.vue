@@ -1,15 +1,15 @@
 <template>
   <div class="recommend" ref="recommend">
-    <scroll ref="scroll" class="recommend-content" :data="discList">
+    <Scroll ref="scroll" class="recommend-content" :data="discList">
       <div>
         <div v-if="recommends.length" class="slider-wrapper">
-          <slider>
+          <Slider>
             <div v-for="item in recommends">
               <a :href="item.linkUrl">
                 <img class="needsclick" @load="loadImg" :src="item.picUrl">
               </a>
             </div>
-          </slider>
+          </Slider>
         </div>
         <div class="recommend-list">
           <h1 class="list-title">热门歌单推荐</h1>
@@ -29,7 +29,7 @@
       <div class="loading-container" v-show="!discList.length">
         <Loading></Loading>
       </div>
-    </scroll>
+    </Scroll>
     <router-view></router-view>
   </div>
 </template>
@@ -75,7 +75,7 @@ export default {
       });
     },
     _getDiscList() {
-      getDiscList().then(res => {
+      getDiscList().then((res, err) => {
         if (res.code === ERR_OK) {
           this.discList = res.data.list;
         }
@@ -88,7 +88,7 @@ export default {
       }
     },
     ...mapMutations({
-      setDisc: "SET_DISC"
+      setDisc: "SET_DISC"    
     })
   },
   components: {

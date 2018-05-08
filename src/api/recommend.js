@@ -18,7 +18,7 @@ export function getRecommend() {
 //获取歌单
 export function getDiscList() {
   const url = '/api/getDiscList';
-  // var url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg'
+  // const url = 'https://c.y.qq.com/splcloud/fcgi-bin/fcg_bin/fcg_get_diss_by_tag.fcg';
 
   const data = Object.assign({}, commonParams, {
     platform: 'yqq',
