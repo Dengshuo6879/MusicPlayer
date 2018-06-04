@@ -72,8 +72,7 @@
             name: item.Fsinger_name
           }))
         })
-//        console.log(map)
-        // 为了得到有序列表，我们需要处理 map
+        // 为了得到有序列表，我们需要处理 map，得到两块数组
         let hot = []
         let ret = []
         for (let key in map) {
